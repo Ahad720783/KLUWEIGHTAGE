@@ -1,0 +1,170 @@
+/* ===========================================================
+   GLOBAL THEME VARIABLES
+   Auto-adjusts to Chrome Light/Dark theme
+   =========================================================== */
+
+:root {
+  --primary: #7C3AED;             /* Purple */
+  --primary-dark: #5B21B6;        /* Dark Purple */
+  --bg: #FAFAFA;                  /* Light Mode Background */
+  --card-bg: #FFFFFF;             /* Light Mode Card */
+  --text: #1F2937;                /* Main Text */
+  --text-light: #6B7280;          /* Secondary Text */
+  --input-bg: #F3E8FF;            /* Light Purple Input Background */
+  --input-border: #C4B5FD;        /* Soft Purple Border */
+}
+
+/* Auto Dark Mode based on Chrome theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1A1A1E;               /* Dark Background */
+    --card-bg: #252529;          /* Card in dark mode */
+    --text: #F5F5F5;             /* White text */
+    --text-light: #CCCCCC;       /* Soft gray text */
+    --input-bg: #3A2F4D;         /* Purple-ish dark input */
+    --input-border: #7C3AED;     /* Purple border */
+  }
+}
+
+
+/* ===========================================================
+   GLOBAL STYLES
+   =========================================================== */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ===========================================================
+   APP MAIN CONTAINER
+   =========================================================== */
+
+.app-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+
+/* ===========================================================
+   HEADER
+   =========================================================== */
+
+header {
+  width: 100%;
+  background: #6a5acd;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  box-sizing: border-box;
+}
+
+.header-logo img {
+  height: 42px;
+  width: 42px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-title h1 {
+  font-size: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Invisible placeholder to keep layout balanced */
+.header-placeholder {
+  width: 42px; /* same size as the logo */
+}
+
+
+
+/* ===========================================================
+   CALCULATOR CARD
+   =========================================================== */
+
+.calculator-container {
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  padding: 25px;
+  background-color: var(--card-bg);
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.calculator-container h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+
+/* INPUT FIELDS */
+.calculator-container input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--text);
+}
+
+.calculator-container input::placeholder {
+  color: var(--text-light);
+}
+
+
+/* BUTTON */
+.calculator-container button {
+  width: 95%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.calculator-container button:hover {
+  background-color: var(--primary-dark);
+}
+
+
+/* RESULT TEXT */
+.result {
+  margin-top: 15px;
+  color: #10B981; /* Green for success */
+  font-weight: bold;
+}
+
+
+/* ===========================================================
+   FOOTER
+   =========================================================== */
+
+.footer {
+  padding-top: 13%;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-top: 20px;
+  line-height: 1.4;
+}
