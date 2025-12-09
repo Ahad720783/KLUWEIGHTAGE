@@ -18,7 +18,7 @@ export default function MarksCalculator() {
 
     const weightedScore = (obtained / total) * w;
 
-    setResult(`Your weightage is: ${weightedScore.toFixed(2)}`);
+    setResult(`Your weightage is: ${weightedScore.toFixed(0)}`);
   };
 
   return (
